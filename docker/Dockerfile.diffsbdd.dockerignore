@@ -1,0 +1,12 @@
+# Отдельный список исключений для этого образа: общий .dockerignore прячет external/,
+# а здесь оттуда нужен environment.yaml.
+.git
+.venv
+data
+runs
+source_files
+**/__pycache__
+*.ckpt
+*.pt
+*.pth
+*.safetensors

@@ -1,0 +1,11 @@
+.git
+.venv
+data
+runs
+external
+source_files
+**/__pycache__
+*.ckpt
+*.pt
+*.pth
+*.safetensors

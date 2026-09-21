@@ -1,0 +1,39 @@
+# Терминальный вход в то же окружение, что и у devcontainer: docker compose run --rm dev pytest
+x-base: &base
+  build:
+    context: .
+    dockerfile: docker/Dockerfile.base
+  image: kinase-ifp-potential:base
+  working_dir: /workspace
+
+services:
+  dev:
+    <<: *base
+    # Репозиторий монтируется поверх скопированного в образ кода: проверки идут по
+    # рабочему дереву, а не по слепку на момент сборки.
+    volumes:
+      - .:/workspace
+
+  # Отдельный вход для облака. Клиенту Modal нужен токен, а он лежит в домашнем каталоге
+  # пользователя (`%USERPROFILE%\.modal.toml`, создаётся командой `modal setup`) и в
+  # репозиторий не попадает. Без этого монтирования `modal run` внутри
+  # контейнера падает с «Token missing», хотя на хосте токен есть.
+  #
+  # Токен примонтирован только сюда и только на чтение: обычные проверки (`dev`)
+  # работают на машине, где Modal вообще не настроен.
+  #
+  # `create_host_path: false` обязателен. В короткой записи Docker, не найдя файла
+  # токена, создаёт на его месте пустой каталог, и клиент Modal падает с
+  # «Is a directory: '/root/.modal.toml'» — сообщение, по которому не догадаться,
+  # что токена просто нет. С этим флагом отказ говорит правду:
+  # исходного пути не существует.
+  cloud:
+    <<: *base
+    volumes:
+      - .:/workspace
+      - type: bind
+        source: ${USERPROFILE:-/nonexistent}/.modal.toml
+        target: /root/.modal.toml
+        read_only: true
+        bind:
+          create_host_path: false

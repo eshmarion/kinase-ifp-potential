@@ -1,0 +1,3 @@
+run_id,mol_id,condition,guidance_scale,seed,smiles,valid,connected,ifp_tanimoto,ifp_tversky,hinge_hbond,qed,sa_score,n_heavy_atoms,posebusters_valid,posebusters_fail_reasons,vina_score,ligand_efficiency
+2026-08-23-6tgu-s0-n5-top2,2026-08-23-6tgu-s0-n5-0001,rerank-top20,0.0,0,CCO,1,1,0.41,0.55,1,,,,1,,,
+2026-08-23-6tgu-s0-n5-top2,2026-08-23-6tgu-s0-n5-0004,rerank-top20,0.0,0,CCO,1,1,0.52,0.66,1,,,,1,,,

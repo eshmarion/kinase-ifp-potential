@@ -1,0 +1,12 @@
+{
+  "run_id": "2026-08-23-6tgu-s0-n5-top2",
+  "created_utc": "2026-08-23T18:10:00Z",
+  "target": {"pdb_id": "6tgu", "klifs_structure_id": 1234},
+  "source": "local-poses",
+  "model": {"repo_commit": null, "checkpoint": null},
+  "sampling": {"n_requested": 5, "n_returned": 2, "seed": 0,
+               "guidance_scale": 0.0, "timesteps": null},
+  "platform": "local-cpu",
+  "duration_sec": 12,
+  "project_commit": "0000000"
+}

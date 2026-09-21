@@ -1,0 +1,33 @@
+# syntax=docker/dockerfile:1
+# Окружение DiffSBDD: conda-зависимости, которых нет на PyPI (openbabel, pytorch-scatter)
+# и сборка torch под CUDA. Локально этот образ запускается на CPU — этого достаточно,
+# чтобы проверить, что окружение вообще собирается и импортируется, не тратя GPU-минуты.
+#
+# В образ кладётся только окружение, без кода DiffSBDD: чужой репозиторий монтируется
+# при запуске. Так пересборка образа не требуется при каждом обновлении клона, и чужой
+# код не запекается в собираемый артефакт.
+FROM mambaorg/micromamba:1.5.8
+
+USER root
+
+# environment.yaml берётся из клона DiffSBDD как есть: чужой файл не изменяется,
+# иначе правка не переживёт обновление клона.
+COPY external/DiffSBDD/environment.yaml /tmp/environment.yaml
+
+# mkl=2024.0.0 закрепляется отдельно: с mkl 2025 сборки torch 2.0.1 падают при импорте
+# с ошибкой о недостающем символе. Это известное несовместимое сочетание, а не правка
+# чужого окружения: сам environment.yaml не трогается.
+RUN micromamba create -y -f /tmp/environment.yaml \
+    && micromamba install -y -n diffsbdd -c conda-forge "mkl=2024.0.0" \
+    && micromamba clean -a -y
+
+# Окружение активируется через PATH, а не через entrypoint micromamba: Modal подставляет
+# свою команду запуска, и чужой entrypoint до неё не доходит.
+ENV PATH=/opt/conda/envs/diffsbdd/bin:$PATH \
+    PYTHONUNBUFFERED=1
+
+# setuptools>=81 удалил pkg_resources, на который опираются старые зависимости DiffSBDD.
+RUN pip install --no-cache-dir "setuptools<81"
+
+ENTRYPOINT []
+CMD ["python", "-c", "import torch, torch_scatter; print(torch.__version__)"]

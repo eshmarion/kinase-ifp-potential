@@ -1,0 +1,39 @@
+# syntax=docker/dockerfile:1
+# Базовый образ проекта: всё, что считается локально без GPU — IFP, метрики, тесты.
+# Окружение DiffSBDD сюда не входит: у него conda-зависимости и своё место в Modal.
+FROM ghcr.io/astral-sh/uv:python3.10-bookworm-slim
+
+# git нужен установке opencadd из GitHub (на PyPI его нет);
+# libxrender1 и libxext6 — библиотеки, без которых не импортируется rdkit.Chem.Draw,
+# а без него не импортируется prolif.
+RUN apt-get update && apt-get install -y --no-install-recommends \
+        git libxrender1 libxext6 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Окружение лежит вне /workspace: рабочая папка перекрывается монтированием
+# репозитория с хоста, и venv внутри неё был бы затёрт при каждом старте.
+ENV UV_PROJECT_ENVIRONMENT=/opt/venv \
+    UV_LINK_MODE=copy \
+    UV_COMPILE_BYTECODE=1 \
+    PATH="/opt/venv/bin:$PATH" \
+    PYTHONUNBUFFERED=1
+
+WORKDIR /workspace
+
+# Проверяемое дерево монтируется снаружи и принадлежит другому пользователю:
+# в CI это `runner` (uid 1001), внутри контейнера мы root. Git 2.35.2 и новее
+# отказывается читать такой репозиторий («detected dubious ownership») —
+# защита от подмены конфига через чужой каталог. Здесь чужого нет: каталог
+# приносит сам CI. Локально на Docker Desktop не срабатывает вовсе.
+RUN git config --system --add safe.directory /workspace
+
+# Зависимости ставятся до копирования кода: правка модуля не пересобирает окружение.
+COPY pyproject.toml uv.lock README.md ./
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --frozen --no-install-project --all-extras --group dev
+
+COPY . .
+RUN --mount=type=cache,target=/root/.cache/uv \
+    uv sync --frozen --all-extras --group dev
+
+CMD ["bash"]

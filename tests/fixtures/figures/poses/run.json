@@ -1,0 +1,12 @@
+{
+  "run_id": "fix-run",
+  "created_utc": "2026-08-24T12:00:00Z",
+  "target": {"pdb_id": "6tgu", "klifs_structure_id": 12448},
+  "source": "local-poses",
+  "model": {"repo_commit": null, "checkpoint": null},
+  "sampling": {"n_requested": 4, "n_returned": 4, "seed": 0,
+               "guidance_scale": 0.0, "timesteps": null},
+  "platform": "local-cpu",
+  "duration_sec": 1,
+  "project_commit": "0000000"
+}
