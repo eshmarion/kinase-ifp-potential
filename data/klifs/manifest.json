@@ -1,0 +1,77 @@
+{
+  "schema": 1,
+  "generator": "python scripts/klifs_manifest.py --write",
+  "source": {
+    "database": "KLIFS",
+    "access": "opencadd.databases.klifs.setup_remote()",
+    "client_version": "v1.0.1+88.g57eafc2",
+    "database_version": null,
+    "database_version_note": "KLIFS через opencadd версию выгрузки не сообщает: объект сессии несёт только таблицы. Проверено 14.09.2026 перечислением её атрибутов",
+    "command_note": "expected_command — команда, которой файл должен получаться, а не запись того, чем он получен: строки объявлены константами в FILE_ORIGINS и одинаковы при любом прогоне. Фактическая строка вызова не сохраняется (ожидание, а не протокол)"
+  },
+  "files": {
+    "calibration_diffsbdd_ready.csv": {
+      "origin": "derived",
+      "expected_command": "python scripts/classify_complexes.py --reselect-calibration --out data/klifs/calibration_diffsbdd_ready.csv",
+      "retrieved_not_later_than": "2026-09-14",
+      "date_basis": "коммит 4562792, последний изменивший файл",
+      "records": 12,
+      "bytes": 676,
+      "sha256": "b44124cbb1ffa3dee4b187d3cf375885262b913a23c3609bdb9cc7ad77efbe2c"
+    },
+    "kinases.csv": {
+      "origin": "klifs-download",
+      "expected_command": "python scripts/fetch_klifs.py",
+      "retrieved_not_later_than": "2026-08-31",
+      "date_basis": "коммит 35a1b24, последний изменивший файл",
+      "records": 227,
+      "bytes": 7413,
+      "sha256": "45bb5358279a19299a8b0409d5a268087f64b209f6da5db550d9fb3a8a425466"
+    },
+    "klifs_ifp.csv": {
+      "origin": "klifs-download",
+      "expected_command": "python scripts/fetch_klifs_ifp.py --limit 0",
+      "retrieved_not_later_than": "2026-09-03",
+      "date_basis": "коммит 33e6a90, последний изменивший файл",
+      "records": 7855,
+      "bytes": 4762425,
+      "sha256": "9f4a38bc8a228b9a537fbafa2fe8ffb60da6af9457b1dec931664b2a833af530"
+    },
+    "pocket_content.csv": {
+      "origin": "derived",
+      "expected_command": "python scripts/classify_complexes.py --sample 60 --out data/klifs/pocket_content.csv",
+      "retrieved_not_later_than": "2026-09-14",
+      "date_basis": "коммит bd688c5, последний изменивший файл",
+      "records": 59,
+      "bytes": 4954,
+      "sha256": "2022176b09bec4149349e63f1744a7491a47a41aa456e40a8befa4ffb96b4df0"
+    },
+    "pocket_content_calibration.csv": {
+      "origin": "derived",
+      "expected_command": "python scripts/classify_complexes.py --calibration --out data/klifs/pocket_content_calibration.csv",
+      "retrieved_not_later_than": "2026-09-14",
+      "date_basis": "коммит bd688c5, последний изменивший файл",
+      "records": 12,
+      "bytes": 1272,
+      "sha256": "e6d8d98ffebe5dc6b933b56011dcb1e68760f35fb38a3c4eb16f79233d96df7b"
+    },
+    "structures.csv": {
+      "origin": "klifs-download",
+      "expected_command": "python scripts/fetch_klifs.py",
+      "retrieved_not_later_than": "2026-08-26",
+      "date_basis": "коммит 63ef4c0, последний изменивший файл",
+      "records": 7465,
+      "bytes": 2125279,
+      "sha256": "164521d87159e78bcd110b63c4cceec3580b101855891837505a93a003867e1f"
+    },
+    "structures_all.csv": {
+      "origin": "klifs-download",
+      "expected_command": "python scripts/fetch_klifs.py",
+      "retrieved_not_later_than": "2026-08-26",
+      "date_basis": "коммит 63ef4c0, последний изменивший файл",
+      "records": 14068,
+      "bytes": 4002285,
+      "sha256": "86fd3913ac6fb50fee990a6bd140643caa1eace84592b16d071490511edebc5d"
+    }
+  }
+}

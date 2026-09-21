@@ -1,0 +1,13 @@
+label,reference_bits,missed,extra,identical,differences
+2qoc,12,0,0,1,
+2yex,17,0,0,1,
+3bhy,14,0,1,0,+ION-@81
+3war,11,0,0,1,
+5lvo,14,0,0,1,
+5nkg,22,0,0,1,
+6fnk,14,0,0,1,
+6ra7,17,0,0,1,
+6s14,18,0,0,1,
+6srh,18,0,0,1,
+6tgu,17,0,0,1,
+8aoj,17,1,0,0,-DON@80

@@ -1,0 +1,13 @@
+pdb_id,kinase,resolution,qualityscore,baseline_pdb_id,changed
+5lvm,PDK1,1.26,9.9,5lvo,1
+7ako,CHK1,1.8,9.9,2yex,1
+2j90,DAPK3,2.0,9.4,3bhy,1
+5cu3,CK2a1,1.79,9.9,3war,1
+6qy9,CK2a2,1.5,8.9,6tgu,1
+4zzn,Erk2,1.33,9.8,8aoj,1
+5aik,DYRK1A,2.7,9.8,6s14,1
+6ra7,TNIK,1.2,9.6,6ra7,0
+8qqy,EphA2,1.8,8.4,5nkg,1
+4gk3,EphA3,1.9,9.6,2qoc,1
+2x9f,EphB4,1.75,9.7,6fnk,1
+6srh,ALK2,1.25,9.6,6srh,0

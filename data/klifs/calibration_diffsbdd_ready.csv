@@ -1,0 +1,13 @@
+pdb_id,expo_id,pocket_class,matches_diffsbdd,radius,qed,ligand_atoms,ligand_copies,water_atoms,neighbours,reasons
+5lvm,ADE,diffsbdd-ready,1,8.0,0.5297,14,1,21,,
+4hyi,1AO,diffsbdd-ready,1,8.0,0.5466,29,1,35,,
+5a6n,U7E,diffsbdd-ready,1,8.0,0.7155,15,1,11,,
+3war,NIO,diffsbdd-ready,1,8.0,0.5999,9,1,10,,
+6tgu,N92,diffsbdd-ready,1,8.0,0.6422,66,1,21,,
+4zzn,CQ8,diffsbdd-ready,1,8.0,0.7613,25,1,34,,
+6s14,KQW,diffsbdd-ready,1,8.0,0.7230,34,1,33,,
+6ra7,JWK,diffsbdd-ready,1,8.0,0.7104,22,1,33,,
+5nkg,8ZK,diffsbdd-ready,1,8.0,0.3621,68,1,31,,
+4p5q,Q0B,diffsbdd-ready,1,8.0,0.4384,30,1,21,,
+6fnk,DXK,diffsbdd-ready,1,8.0,0.6691,17,1,30,,
+8r7g,YEE,diffsbdd-ready,1,8.0,0.5840,34,4,5,,

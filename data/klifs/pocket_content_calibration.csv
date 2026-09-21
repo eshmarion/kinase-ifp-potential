@@ -1,0 +1,13 @@
+pdb_id,expo_id,pocket_class,matches_diffsbdd,radius,qed,ligand_atoms,ligand_copies,water_atoms,neighbours,reasons
+5lvo,ATP,additive,0,8.0,0.1974,42,1,47,CL:1,добавка кристаллизации в кармане: CL | QED 0.197 ниже порога обучающей выборки 0.3
+2yex,YEX,additive,0,8.0,0.5544,20,1,31,GOL:4,добавка кристаллизации в кармане: GOL
+3bhy,7CP,additive,0,8.0,0.7665,25,1,25,CL:1,добавка кристаллизации в кармане: CL
+3war,NIO,diffsbdd-ready,1,8.0,0.5999,9,1,10,,
+6tgu,N92,diffsbdd-ready,1,8.0,0.6422,66,1,21,,
+8aoj,N8L,covalent,0,8.0,0.9424,40,1,40,,лиганд связан с белком ковалентно (ближайший контакт 1.81 Å)
+6s14,KQW,diffsbdd-ready,1,8.0,0.7230,34,1,33,,
+6ra7,JWK,diffsbdd-ready,1,8.0,0.7104,22,1,33,,
+5nkg,8ZK,diffsbdd-ready,1,8.0,0.3621,68,1,31,,
+2qoc,ANP,metal,0,8.0,0.1786,36,1,44,MG:1;MG:1,ион металла в кармане: MG (модель его не видит) | QED 0.179 ниже порога обучающей выборки 0.3
+6fnk,DXK,diffsbdd-ready,1,8.0,0.6691,17,1,30,,
+6srh,LU8,additive,0,8.0,0.5103,128,4,35,EDO:3;SO4:1,"добавка кристаллизации в кармане: EDO, SO4"
