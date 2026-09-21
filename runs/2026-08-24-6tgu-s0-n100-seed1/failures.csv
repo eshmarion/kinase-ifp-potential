@@ -1,0 +1,6 @@
+mol_id,stage,reason
+2026-08-24-6tgu-s0-n100-seed1-0002,sanitize,AtomValenceException
+2026-08-24-6tgu-s0-n100-seed1-0038,sanitize,AtomValenceException
+2026-08-24-6tgu-s0-n100-seed1-0059,sanitize,AtomValenceException
+2026-08-24-6tgu-s0-n100-seed1-0079,sanitize,AtomValenceException
+2026-08-24-6tgu-s0-n100-seed1-0085,sanitize,AtomValenceException

@@ -1,0 +1,13 @@
+{
+  "run_id": "2026-09-18-6fnk-s0-n100-r9",
+  "pdb_id": "6fnk",
+  "kinase": "EphB4",
+  "seed": 9,
+  "n_poses": 100,
+  "n_near": 12,
+  "n_far": 66,
+  "roc_auc": "0.8649",
+  "spearman_rho": "-0.5586",
+  "native_rank": 1,
+  "native_ties": 3
+}

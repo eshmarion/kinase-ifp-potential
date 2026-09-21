@@ -1,0 +1,5 @@
+mol_id,stage,reason
+2026-09-18-3war-s0-n100-r6-0096,perturb,rmsd_target_unreachable: целевой RMSD 4.86 A недостижим за 20 попыток при пределе сдвига центра 3.0 A
+2026-09-18-3war-s0-n100-r6-0097,perturb,rmsd_target_unreachable: целевой RMSD 4.91 A недостижим за 20 попыток при пределе сдвига центра 3.0 A
+2026-09-18-3war-s0-n100-r6-0098,perturb,rmsd_target_unreachable: целевой RMSD 4.95 A недостижим за 20 попыток при пределе сдвига центра 3.0 A
+2026-09-18-3war-s0-n100-r6-0099,perturb,rmsd_target_unreachable: целевой RMSD 5.00 A недостижим за 20 попыток при пределе сдвига центра 3.0 A

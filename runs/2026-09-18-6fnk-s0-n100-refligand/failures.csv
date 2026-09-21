@@ -1,0 +1,5 @@
+mol_id,stage,reason
+2026-09-18-6fnk-s0-n100-refligand-0012,sanitize,AtomValenceException
+2026-09-18-6fnk-s0-n100-refligand-0069,sanitize,AtomValenceException
+2026-09-18-6fnk-s0-n100-refligand-0096,sanitize,AtomValenceException
+2026-09-18-6fnk-s0-n100-refligand-0097,sanitize,AtomValenceException

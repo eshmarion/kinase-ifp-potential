@@ -1,0 +1,4 @@
+mol_id,stage,reason
+2026-09-18-6fnk-s0-n100-refligand-seed1-0049,prepare,no_explicit_hydrogens
+2026-09-18-6fnk-s0-n100-refligand-seed1-0071,sanitize,AtomValenceException
+2026-09-18-6fnk-s0-n100-refligand-seed1-0093,sanitize,AtomValenceException

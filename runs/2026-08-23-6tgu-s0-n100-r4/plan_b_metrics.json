@@ -1,0 +1,13 @@
+{
+  "run_id": "2026-08-23-6tgu-s0-n100-r4",
+  "pdb_id": "6tgu",
+  "kinase": "CK2a2",
+  "seed": 4,
+  "n_poses": 100,
+  "n_near": 12,
+  "n_far": 66,
+  "roc_auc": "0.9697",
+  "spearman_rho": "-0.7140",
+  "native_rank": 1,
+  "native_ties": 4
+}

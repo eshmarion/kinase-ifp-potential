@@ -1,0 +1,13 @@
+{
+  "run_id": "2026-09-18-3war-s0-n100-r9",
+  "pdb_id": "3war",
+  "kinase": "CK2a1",
+  "seed": 9,
+  "n_poses": 96,
+  "n_near": 12,
+  "n_far": 62,
+  "roc_auc": "0.9825",
+  "spearman_rho": "-0.7796",
+  "native_rank": 1,
+  "native_ties": 6
+}

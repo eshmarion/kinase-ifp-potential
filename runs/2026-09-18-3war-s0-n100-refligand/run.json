@@ -1,0 +1,37 @@
+{
+  "run_id": "2026-09-18-3war-s0-n100-refligand",
+  "created_utc": "2026-09-18T07:23:16Z",
+  "target": {
+    "pdb_id": "3war",
+    "klifs_structure_id": 5429,
+    "protonation": "explicit",
+    "package_sha256": "214c173b3100d12e3a90984325f28919e0283d63af2887aba5a481f6d4fe0f86"
+  },
+  "source": "diffsbdd",
+  "model": {
+    "repo_commit": "5d0d38d16c8932a0339fd2ce3f67ade98bbdff27",
+    "checkpoint": "crossdocked_fullatom_cond.ckpt"
+  },
+  "sampling": {
+    "n_requested": 100,
+    "pocket_mode": "ref-ligand",
+    "n_returned": 97,
+    "seed": 0,
+    "guidance_scale": 0.0,
+    "timesteps": null
+  },
+  "platform": "modal-gpu",
+  "duration_sec": 311,
+  "condition": "pocket-ref-ligand",
+  "environment": {
+    "python": "3.10.19",
+    "numpy": "2.2.6",
+    "rdkit": "2026.3.5",
+    "prolif": "2.2.1",
+    "scipy": "1.15.3"
+  },
+  "ranking": {
+    "top_fraction": 0.2,
+    "n_selected": 20
+  }
+}

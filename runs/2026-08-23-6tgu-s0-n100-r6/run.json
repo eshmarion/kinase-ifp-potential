@@ -1,0 +1,33 @@
+{
+  "run_id": "2026-08-23-6tgu-s0-n100-r6",
+  "created_utc": "2026-08-23T18:16:41Z",
+  "target": {
+    "pdb_id": "6tgu",
+    "klifs_structure_id": 12448,
+    "protonation": "explicit",
+    "package_sha256": "351246c1c98587e048a78c89f6104354a12d8ccdd78f92b2d6a6d11905b080c9"
+  },
+  "source": "local-poses",
+  "model": {
+    "repo_commit": null,
+    "checkpoint": null
+  },
+  "sampling": {
+    "n_requested": 100,
+    "n_returned": 100,
+    "seed": 6,
+    "guidance_scale": 0.0,
+    "timesteps": null
+  },
+  "platform": "local-cpu",
+  "duration_sec": 3,
+  "scoring": {
+    "protonation": "explicit",
+    "package_sha256": "69887f963cbc86b05868420cb3ed74dae6a5ae9ba79935b5b9bd1bece1053091"
+  },
+  "ranking": {
+    "top_fraction": 0.2,
+    "n_selected": 20
+  },
+  "condition": "local-poses"
+}
